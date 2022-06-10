@@ -1,0 +1,10 @@
+.todo-list-main {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.todo-list-main>h1 {
+    text-align: center;
+    font-size: 40px;
+    margin: 20px;
+}

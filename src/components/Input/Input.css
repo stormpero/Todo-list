@@ -1,0 +1,13 @@
+.todo-list-input{
+    width: 100%;
+    margin: 10px 0;
+    padding: 15px;
+    background-color: #fafafa;
+    border: 0;
+    box-shadow:0 0 4px rgba(0,0,0,0.3);
+    transition: box-shadow .3s;
+}
+
+.todo-list-input:hover {
+    box-shadow:0 0 4px rgba(0,0,0,0.5);
+}
