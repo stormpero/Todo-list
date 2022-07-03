@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+import {useState, useEffect, useCallback} from "react";
 
 import {todos} from "../packages/storage";
 import uuid from "react-uuid";
@@ -22,18 +22,18 @@ export const useTodoList = () => {
     }]);
   }
 
-  const deleteTodo = (id) => {
-    setTodoList(todoList.filter(el => el.id !== id))
-  }
+  const deleteTodo = useCallback((id) => {
+    setTodoList(prevList => prevList.filter(el => el.id !== id))
+  }, [])
 
-  const doneTodo = (id) => {
-    setTodoList(todoList.map(el => {
+  const doneTodo = useCallback((id) => {
+    setTodoList(prevList => prevList.map(el => {
       if (el.id === id) {
         el.done = !el.done;
       }
       return el;
     }))
-  }
+  }, [])
 
   return {
     todoList,
